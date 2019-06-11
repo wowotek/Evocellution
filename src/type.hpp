@@ -103,11 +103,11 @@ T distance (tvec2<T> a, tvec2<T> b)
     return length(a - b);
 }
 
-typedef tvec2<char>             vec2b;
-typedef tvec2<int>              vec2i;
-typedef tvec2<float>            vec2f;
-typedef tvec2<double>           vec2d;
-typedef tvec2<unsigned int>     vec2ui;
-typedef tvec2<unsigned char>    vec2ub;
+typedef tvec2 <char>          vec2b;
+typedef tvec2 <int>           vec2i;
+typedef tvec2 <float>         vec2f;
+typedef tvec2 <double>        vec2d;
+typedef tvec2 <unsigned int>  vec2ui;
+typedef tvec2 <unsigned char> vec2ub;
 
 #endif

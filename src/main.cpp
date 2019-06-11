@@ -1,11 +1,14 @@
 #include <iostream>
 #include "glHelper.hpp"
 
-#include "control.cpp"
-#include "render.cpp"
+#include "gameObjects/entity.cpp"
+#include "control.hpp"
+#include "render.hpp"
 
 #define WIDTH  1280
 #define HEIGHT 720
+
+void init(void);
 
 int main(int argc, char * argv[]){
     glutInit(&argc, argv);
@@ -25,17 +28,19 @@ void init(void){
     glutDisplayFunc(renderDisplay);
     // ------------
 
-    // Controls ---
-    ControlHandler controlHandler;
+    AlienShip x1(10, 10);
+    x1.render();
 
+    // Controls ---
     glutIgnoreKeyRepeat(1);
-    glutKeyboardFunc        (controlHandler.keyboardDownEvent);
-    glutKeyboardUpFunc      (controlHandler.keyboardUpEvent);
-    glutMouseFunc           (controlHandler.mouseClickEvent);
-    glutPassiveMotionFunc   (controlHandler.mouseMoveEvent);
-    glutMotionFunc          (controlHandler.mouseDragEvent);
+    glutKeyboardFunc        (keyboardDownEvent);
+    glutKeyboardUpFunc      (keyboardUpEvent);
+    glutMouseFunc           (mouseClickEvent);
+    glutPassiveMotionFunc   (mouseMoveEvent);
+    glutMotionFunc          (mouseDragEvent);
     // ------------
 
     updateScreen(120/1000);
     gluOrtho2D(0, WIDTH, HEIGHT, 0);
 }
+

@@ -3,12 +3,13 @@
 #include <GL/glut.h>
 #include <GL/freeglut.h>
 
-void renderDisplay(){
+#include "control.hpp"
 
+void renderDisplay(){
+    
 }
 
 void updateScreen(int time){
-    
     glutPostRedisplay();
     glutTimerFunc(time, updateScreen, time);
 }
