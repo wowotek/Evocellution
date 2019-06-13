@@ -7,7 +7,7 @@
 #include <GL/freeglut.h>
 
 #include <iostream>
-#include "../type.hpp"
+#include "../utils/type.hpp"
 
 class Entity{
     protected:

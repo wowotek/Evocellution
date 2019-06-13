@@ -1,5 +1,5 @@
 #include "objects.hpp"
-#include "../glHelper.hpp"
+#include "../utils/glHelper.hpp"
 
 void AlienShip::render(void){
     glPushMatrix();
