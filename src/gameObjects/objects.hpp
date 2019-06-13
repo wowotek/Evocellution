@@ -31,6 +31,10 @@ class Entity{
 
 class AlienShip: public Entity{
     using Entity::Entity;
+
+    private:
+        void renderShip(void);
+        
     public:
         void render(void);
 };
