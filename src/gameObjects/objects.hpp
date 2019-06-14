@@ -15,14 +15,10 @@ class Entity{
         std::string name = "Unnamed";
     public:
         explicit Entity(vec2f);                         // |
-        explicit Entity(int, int);                      // |
         explicit Entity(float, float);                  // |
-        explicit Entity(double, double);                // |
                                                         // +--> Constructors
         explicit Entity(std::string, vec2f);            // |
-        explicit Entity(std::string, int, int);         // |
         explicit Entity(std::string, float, float);     // |
-        explicit Entity(std::string, double, double);   // |
 
         void render(void){
             std::cout << "Not-Implemented" << std::endl;
