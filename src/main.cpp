@@ -1,27 +1,11 @@
 #include <iostream>
 
-#include "utils/glHelper.hpp"
-#include "gameObjects/entity.cpp"
+#include "lib/wowotek/glHelper.hpp"
 #include "game/control.hpp"
 #include "game/render.hpp"
 
 #define WIDTH  1280
 #define HEIGHT 720
-
-void init(void);
-
-int main(int argc, char * argv[]){
-    glutInit(&argc, argv);
-    initGLWindow(
-        WIDTH, HEIGHT,
-        2880, 540, "Kumahasia",
-        GLUT_DOUBLE | GLUT_RGB | GLUT_MULTISAMPLE
-    );
-    init();
-    
-
-    glutMainLoop();
-}
 
 void init(void){
     // Canvas -----
@@ -39,5 +23,18 @@ void init(void){
 
     updateScreen(120/1000);
     gluOrtho2D(0, WIDTH, HEIGHT, 0);
+}
+
+int main(int argc, char * argv[]){
+    glutInit(&argc, argv);
+
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_MULTISAMPLE);
+    glutInitWindowSize(WIDTH, HEIGHT);
+    glutInitWindowPosition(2220, 200);
+    glutCreateWindow("Kumahasia");
+
+    init();
+    
+    glutMainLoop();
 }
 

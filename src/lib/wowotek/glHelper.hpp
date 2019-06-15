@@ -6,9 +6,7 @@
 #include <GL/glut.h>
 #include <math.h>
 
-#include "type.cpp"
-
-void initGLWindow();
+#include "type.hpp"
 
 void point(GLfloat, GLfloat);
 
@@ -29,6 +27,7 @@ void circle(GLfloat, GLfloat, GLfloat);
 void circle(vec2f, GLfloat);
 
 GLuint loadTexture(const char*, GLint, GLint);
+
 
 
 #endif

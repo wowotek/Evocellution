@@ -2,17 +2,6 @@
 
 #include <iostream>
 
-void initGLWindow(  GLint width, GLint height,
-                    GLint posX, GLint posY,
-                    const char * window_name, 
-                    GLenum display_mode_switches)
-{
-    glutInitDisplayMode(display_mode_switches);
-    glutInitWindowSize(width, height);
-    glutInitWindowPosition(posX, posY);
-    glutCreateWindow(window_name);
-}
-
 //--------------------------------------------- PRIMITIVE 2D SHAPE
 void point(GLfloat x ,GLfloat y)
 {
@@ -55,7 +44,7 @@ void rect(vec2f pos, vec2f size){
     rect(pos.x, pos.y, size.x, size.y);
 }
 
-void circle(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation, GLenum SHAPE_MODE){
+void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation, GLenum SHAPE_MODE){
     GLfloat angleIncrement = (360.0f / sides) * M_PI / 180.0f;
     glBegin(SHAPE_MODE);
         GLfloat angle = 0.0f - rotation;

@@ -7,7 +7,7 @@
 #include <GL/freeglut.h>
 
 #include <iostream>
-#include "../utils/type.hpp"
+#include "../lib/wowotek/type.hpp"
 
 class Entity{
     protected:
@@ -25,14 +25,17 @@ class Entity{
         }
 };
 
-class AlienShip: public Entity{
-    using Entity::Entity;
-
+class Cell: public Entity{
     private:
-        void renderShip(void);
-        
+        float mass;
+        float nutrition;
+
+        bool isDead = false;
     public:
+        Cell(float, float, float, float);
+
         void render(void);
+        void update(void);
 };
 
 #endif
