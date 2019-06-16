@@ -27,7 +27,7 @@ class Entity
         explicit Entity(std::string, float, float);     // |
 
         void render(void);
-        void update(float dt);
+        void update(float h);
 };
 
 #endif

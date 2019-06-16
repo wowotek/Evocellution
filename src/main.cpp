@@ -10,6 +10,8 @@
 void init(void){
     // Canvas -----
     glutDisplayFunc(renderDisplay);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
     // ------------
 
     // Controls ---
@@ -28,7 +30,7 @@ void init(void){
 int main(int argc, char * argv[]){
     glutInit(&argc, argv);
 
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_MULTISAMPLE);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_MULTISAMPLE);
     glutInitWindowSize(WIDTH, HEIGHT);
     glutInitWindowPosition(2220, 200);
     glutCreateWindow("Kumahasia");

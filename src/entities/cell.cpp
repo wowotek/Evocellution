@@ -21,7 +21,7 @@ void Cell::update(float dt)
     if(mass < 0.5){isDead = true; return;}
 
     mass -= 0.000005f;
-    diameter = (mass * 1*2) + 10;
+    diameter = (mass * 1*2) + 200;
 
     std::cout << "Position: " << position << " ";
     std::cout << "Velocity: " << velocity << " ";
@@ -39,7 +39,11 @@ void Cell::render(void)
 {
     if(!isDead)
     {
-        glColor3f(r, g, b);
+        glColor4f(r, g, b, 1);
+        circle(position.x, position.y, diameter/2, GL_LINE_LOOP);
+
+        glColor4f(r, g, b, 0.5);
         circle(position.x, position.y, diameter/2);
+
     }
 }

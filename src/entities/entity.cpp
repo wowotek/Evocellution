@@ -1,5 +1,7 @@
 #include "entity.hpp"
 
+
+
 Entity::Entity(vec2f initPos)
 {
     position = initPos;
@@ -21,9 +23,9 @@ Entity::Entity(std::string name, float x, float y)
     position = vec2f(x, y);
 }
 
-void Entity::update(float dt)
+void Entity::update(float h)
 {
-    position += velocity * dt; // euler method
+    position += velocity * h; // euler method
 }
 
 void Entity::render(void){
