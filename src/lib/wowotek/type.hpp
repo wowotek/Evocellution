@@ -1,62 +1,75 @@
 #ifndef TYPE_HPP
 #define TYPE_HPP
 
-template <typename T> struct tvec2{
+template <typename T> 
+struct tvec2{
     T x, y;
 
     tvec2(void) = default;
     tvec2(T s): x(s), y(s) {}
     tvec2(T x, T y): x(x), y(y) {}
 
-    void operator+=(tvec2<T> other){
+    void operator+=(tvec2<T> other)
+    {
         x += other.x;
         y += other.y;
     }
 
-    void operator-=(tvec2<T> other){
+    void operator-=(tvec2<T> other)
+    {
         x -= other.x;
         y -= other.y;
     }
 
-    void operator*=(tvec2<T> other){
+    void operator*=(tvec2<T> other)
+    {
         x *= other.x;
         y *= other.y;
     }
 
-    void operator/=(tvec2<T> other){
+    void operator/=(tvec2<T> other)
+    {
         x /= other.x;
         y /= other.y;
     }
 
-    tvec2<T> operator+(tvec2<T> other){
+    tvec2<T> operator+(tvec2<T> other)
+    {
         return tvec2<T>(x + other.x, y + other.y);
     }
 
-    tvec2<T> operator-(tvec2<T> other){
+    tvec2<T> operator-(tvec2<T> other)
+    {
         return tvec2<T>(x - other.x, y - other.y);
     }
 
-    tvec2<T> operator*(tvec2<T> other){
+    tvec2<T> operator*(tvec2<T> other)
+    {
         return tvec2<T>(x * other.x, y * other.y);
     }
 
-    tvec2<T> operator/(tvec2<T> other){
+    tvec2<T> operator/(tvec2<T> other)
+    {
         return tvec2<T>(x / other.x, y / other.y);
     }
 
-    tvec2<T> operator+(T other){
+    tvec2<T> operator+(T other)
+    {
         return tvec2<T>(x + other, y + other);
     }
 
-    tvec2<T> operator-(T other){
+    tvec2<T> operator-(T other)
+    {
         return tvec2<T>(x - other, y - other);
     }
 
-    tvec2<T> operator*(T other){
+    tvec2<T> operator*(T other)
+    {
         return tvec2<T>(x * other, y * other);
     }
 
-    tvec2<T> operator/(T other){
+    tvec2<T> operator/(T other)
+    {
         return tvec2<T>(x / other, y / other);
     }
 };

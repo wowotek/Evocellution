@@ -18,7 +18,8 @@ void line(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
     glEnd();
 }
 
-void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height, GLenum SHAPE_MODE) {
+void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height, GLenum SHAPE_MODE)
+{
     glBegin(SHAPE_MODE);
         glVertex2f(x, y);
         glVertex2f(x + width, y);
@@ -27,7 +28,8 @@ void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height, GLenum SHAPE_MODE
     glEnd();
 }
 
-void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height){
+void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height)
+{
     glBegin(GL_TRIANGLE_FAN);
         glVertex2f(x, y);
         glVertex2f(x + width, y);
@@ -36,7 +38,8 @@ void rect(GLfloat x, GLfloat y, GLfloat width, GLfloat height){
     glEnd();
 }
 
-void rect(vec2f pos, vec2f size, GLenum SHAPE_MODE){
+void rect(vec2f pos, vec2f size, GLenum SHAPE_MODE)
+{
     rect(pos.x, pos.y, size.x, size.y, SHAPE_MODE);
 }
 
@@ -44,7 +47,8 @@ void rect(vec2f pos, vec2f size){
     rect(pos.x, pos.y, size.x, size.y);
 }
 
-void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation, GLenum SHAPE_MODE){
+void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation, GLenum SHAPE_MODE)
+{
     GLfloat angleIncrement = (360.0f / sides) * M_PI / 180.0f;
     glBegin(SHAPE_MODE);
         GLfloat angle = 0.0f - rotation;
@@ -55,23 +59,28 @@ void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation, G
     glEnd();
 }
 
-void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation) {
+void poly(GLfloat x, GLfloat y, GLfloat size, GLfloat sides, GLfloat rotation)
+{
     poly(x, y, size, sides, rotation, GL_TRIANGLE_FAN);
 }
 
-void poly(vec2f pos, GLfloat size, GLfloat sides, GLfloat rotation){
+void poly(vec2f pos, GLfloat size, GLfloat sides, GLfloat rotation)
+{
     poly(pos.x, pos.y, size, sides, rotation, GL_TRIANGLE_FAN);
 }
 
-void circle(GLfloat x, GLfloat y, GLfloat radius, GLenum SHAPE_MODE) {
+void circle(GLfloat x, GLfloat y, GLfloat radius, GLenum SHAPE_MODE)
+{
     poly(x, y, radius, 720.0, 0.0, SHAPE_MODE);
 }
 
-void circle(vec2f pos, GLfloat radius, GLenum SHAPE_MODE){
+void circle(vec2f pos, GLfloat radius, GLenum SHAPE_MODE)
+{
     poly(pos.x, pos.y, radius, 720.0, 0.0, SHAPE_MODE);
 }
 
-void circle(GLfloat x, GLfloat y, GLfloat radius) {
+void circle(GLfloat x, GLfloat y, GLfloat radius)
+{
     poly(x, y, radius, 720.0, 0.0);
 }
 
@@ -80,7 +89,8 @@ void circle(vec2f pos, GLfloat radius){
 }
 
 //--------------------------------------------- TEXTURING
-GLuint loadTexture(const char * filename, int width, int height){
+GLuint loadTexture(const char * filename, int width, int height)
+{
     FILE * file = fopen( filename, "rb" );
 
     if (file == NULL){

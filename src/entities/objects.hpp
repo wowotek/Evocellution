@@ -9,7 +9,8 @@
 #include <iostream>
 #include "../lib/wowotek/type.hpp"
 
-class Entity{
+class Entity
+{
     protected:
         vec2f position;
         std::string name = "Unnamed";
@@ -20,22 +21,7 @@ class Entity{
         explicit Entity(std::string, vec2f);            // |
         explicit Entity(std::string, float, float);     // |
 
-        void render(void){
-            std::cout << "Not-Implemented" << std::endl;
-        }
-};
-
-class Cell: public Entity{
-    private:
-        float mass;
-        float nutrition;
-
-        bool isDead = false;
-    public:
-        Cell(float, float, float, float);
-
         void render(void);
-        void update(void);
 };
 
 #endif
