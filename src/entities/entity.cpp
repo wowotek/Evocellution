@@ -1,4 +1,4 @@
-#include "objects.hpp"
+#include "entity.hpp"
 
 Entity::Entity(vec2f initPos)
 {

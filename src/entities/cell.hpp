@@ -1,13 +1,11 @@
 #ifndef CELL_HPP
 #define CELL_HPP
 
-#include "objects.hpp"
+#include "entity.hpp"
 
 class Cell: public Entity
 {
     private:
-        vec2f pos;
-
         float age;
         float mass;
         float diameter;

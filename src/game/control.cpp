@@ -1,5 +1,7 @@
 #include "control.hpp"
 
+std::vector<unsigned char> keyPresses;
+
 void keyboardDownEvent(unsigned char key, int x, int y)
 {
     for(unsigned char k : keyPresses)

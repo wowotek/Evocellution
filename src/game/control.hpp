@@ -4,8 +4,6 @@
 #include <iostream>
 #include <vector>
 
-std::vector<unsigned char> keyPresses;
-
 void keyboardDownEvent(unsigned char, int, int);
 void keyboardUpEvent(unsigned char, int, int);
 

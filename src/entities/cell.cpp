@@ -14,12 +14,14 @@ Cell::Cell( float x, float y,
 }
 
 void Cell::update(void)
-{
+{   
     mass = lipids * 2;
-    diameter = (mass * 5) + 10;
+    diameter = (mass * 5) + 120;
+    lipids -= 0.000001;
 }
 
 void Cell::render(void)
 {
-    circle(pos.x, pos.y, diameter/2);
+    glColor3f(1, 0, 0);
+    circle(position.x, position.y, diameter/2);
 }
