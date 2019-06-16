@@ -1,6 +1,8 @@
 #ifndef TYPE_HPP
 #define TYPE_HPP
 
+#include <iostream>
+
 template <typename T> 
 struct tvec2{
     T x, y;
@@ -71,6 +73,12 @@ struct tvec2{
     tvec2<T> operator/(T other)
     {
         return tvec2<T>(x / other, y / other);
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, tvec2<T> vec) {
+        os << "x:" << vec.x << " ";
+        os << "y:" << vec.y << " ";
+        return os;
     }
 };
 

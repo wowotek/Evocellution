@@ -1,6 +1,8 @@
 #include "cell.hpp"
 #include "../lib/wowotek/glHelper.hpp"
 
+#include <math.h>
+
 Cell::Cell( float x, float y,
             float initMass, float initLipids,
             float initNitrates): Entity(x, y)
@@ -9,19 +11,35 @@ Cell::Cell( float x, float y,
     age = 0;
 
     mass = initMass;
-    lipids = initLipids;
     nitrates = initNitrates;
+
+    acceleration = vec2f(0.000005f, 0.000005f);
 }
 
-void Cell::update(void)
-{   
-    mass = lipids * 2;
-    diameter = (mass * 5) + 120;
-    lipids -= 0.000001;
-}
+void Cell::update(float dt)
+{
+    if(mass < 0.5){isDead = true; return;}
+
+    mass -= 0.000005f;
+    diameter = (mass * 1*2) + 10;
+
+    std::cout << "Position: " << position << " ";
+    std::cout << "Velocity: " << velocity << " ";
+    std::cout << "Acceleration: " << acceleration << " ";
+    std::cout << std::endl;
+
+    fflush(stdout);
+
+    // velocity = intergal of a ?
+    position += velocity * dt;
+
+} 
 
 void Cell::render(void)
 {
-    glColor3f(1, 0, 0);
-    circle(position.x, position.y, diameter/2);
+    if(!isDead)
+    {
+        glColor3f(r, g, b);
+        circle(position.x, position.y, diameter/2);
+    }
 }

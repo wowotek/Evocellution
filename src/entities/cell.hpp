@@ -10,7 +10,6 @@ class Cell: public Entity
         float mass;
         float diameter;
 
-        float lipids;
         float nitrates;
 
         bool isDead;
@@ -20,7 +19,7 @@ class Cell: public Entity
         Cell(float, float, float, float, float);
 
         void render(void);
-        void update(void);
+        void update(float dt);
 };
 
 #endif // CELL_HPP

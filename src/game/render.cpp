@@ -17,7 +17,7 @@ void renderDisplay(void)
 
 void updateScreen(int time)
 {
-    c1.update();
+    c1.update(1);
 
     glutPostRedisplay();
     glutTimerFunc(time, updateScreen, time);

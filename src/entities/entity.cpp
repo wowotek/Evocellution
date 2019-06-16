@@ -21,6 +21,11 @@ Entity::Entity(std::string name, float x, float y)
     position = vec2f(x, y);
 }
 
+void Entity::update(float dt)
+{
+    position += velocity * dt; // euler method
+}
+
 void Entity::render(void){
     std::cout << "Not Rendered Yet" << std::endl;
 }

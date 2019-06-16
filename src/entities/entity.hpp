@@ -13,7 +13,12 @@ class Entity
 {
     protected:
         vec2f position;
+        vec2f velocity;
+        vec2f acceleration;
+
         std::string name = "Unnamed";
+
+        float r, g, b;
     public:
         explicit Entity(vec2f);                         // |
         explicit Entity(float, float);                  // |
@@ -22,6 +27,7 @@ class Entity
         explicit Entity(std::string, float, float);     // |
 
         void render(void);
+        void update(float dt);
 };
 
 #endif
